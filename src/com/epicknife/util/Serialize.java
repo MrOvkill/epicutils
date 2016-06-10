@@ -3,13 +3,14 @@ package com.epicknife.util;
 /**
  * A simple class designed to manage the serialization
  * of Java's basic number types.
+ * Literally written when I was sixteen years old.
  * @author Samuel "MrOverkill" Meyers
- * License : BSD
+ * License : Public Domain
  * Date of Creation : 01 / 23 / 2015
  */
 public class Serialize
 {
-    
+
     /**
      * Turns a Java short into a 2-byte array.
      * @param s The short to serialize.
@@ -22,7 +23,7 @@ public class Serialize
         b[3] = (byte)(s >>> 0);
         return b;
     }
-    
+
     /**
      * Turns a Java int into a 2-byte array.
      * @param i The int to serialize.
@@ -37,7 +38,7 @@ public class Serialize
         b[3] = (byte)(i >>> 0);
         return b;
     }
-    
+
     /**
      * Turns a Java long into an 8-byte array.
      * @param l The long to serialize.
@@ -56,7 +57,7 @@ public class Serialize
         b[7] = (byte)(l >>> 0);
         return b;
     }
-    
+
     /**
      * Turns a 2-byte array into a Java short or
      * returns zero.
@@ -69,13 +70,13 @@ public class Serialize
         {
             b = new byte[2];
         }
-        
+
         short s = 0;
         s = (short)(b[2] << 8);
         s = (short)(b[3] << 0);
         return s;
     }
-    
+
     /**
      * Turns a 4-byte array into a Java int or
      * returns zero.
@@ -88,7 +89,7 @@ public class Serialize
         {
             b = new byte[4];
         }
-        
+
         int i = 0;
         i = b[0] << 24;
         i = b[1] << 16;
@@ -96,7 +97,7 @@ public class Serialize
         i = b[3] << 0;
         return i;
     }
-    
+
     /**
      * Turns an 8-byte array into a Java long or
      * returns zero.
@@ -116,7 +117,7 @@ public class Serialize
         i = b[7] << 0;
         return i;
     }
-    
+
     /**
      * Determines whether a given char is numeric.
      * @param c The char.
@@ -124,17 +125,17 @@ public class Serialize
      */
     public static boolean isNumeric(char c)
     {
-        return (c == '0' || c == '1' || c == '2' || 
+        return (c == '0' || c == '1' || c == '2' ||
                 c == '3' || c == '4' || c == '5' ||
                 c == '6' || c == '7' || c == '8' ||
                 c == '9' || c == '+' || c == '-' ||
                 c == '.');
     }
-    
+
     /**
      * Determines whether a given char is alpha-numeric.
      * @param c The char.
-     * @return Whether c is alpha-numeric. 
+     * @return Whether c is alpha-numeric.
      */
     public static boolean isAlphaNumeric(char c)
     {
@@ -152,11 +153,11 @@ public class Serialize
                 c == '7' || c == '8' || c == '9' ||
                 c == '+' || c == '-' || c == '.');
     }
-    
+
     /**
      * Determines whether a given String is alpha-numeric.
      * @param str The String.
-     * @return Whether str is alpha-numeric. 
+     * @return Whether str is alpha-numeric.
      */
     public static boolean isAlphaNumeric(String str)
     {
