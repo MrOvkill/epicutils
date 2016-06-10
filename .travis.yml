@@ -1,2 +1,2 @@
 language: java
-script: bundle exec ant build jar clean
+script: ant build jar clean
